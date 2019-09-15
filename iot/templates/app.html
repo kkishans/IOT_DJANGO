@@ -1,0 +1,39 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+        {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Signin Template</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/signin.css' %}" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+        <nav class="navbar  navbar-expand-lg  bg-light justify-content-between">
+                <a class="navbar-brand">IOT</a>
+               
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Up</button>
+        </nav><br>
+        <div class="container">
+            <div class="row">
+                    {% block body %}
+      
+                    {% endblock body %}
+            </div>
+               
+        </div>
+    
+  </body>
+</html>
