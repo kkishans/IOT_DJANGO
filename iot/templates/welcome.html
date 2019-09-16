@@ -4,4 +4,18 @@
   <h1 class="lead">
       welcome to home page
   </h1>
+<!-- {{ users }} -->
+  <br>
+  {% for user in users %}
+  <div class="card">
+    <div class="card-header">
+      {{ user.username }}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{user.email}}</h5>
+      <p class="card-text">Password : {{ user.password }}</p>
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    </div>
+  </div><br><br>
+  {% endfor %}
 {% endblock body %}
