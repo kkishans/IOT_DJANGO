@@ -53,7 +53,7 @@
 						borderColor: "rgba(253, 44, 0,1)",
 						pointRadius: 5,
 						pointBackgroundColor: "rgba(255,0,5,1)",
-						pointBorderColor: "rgba(255,77,77,0.8)",
+						pointBorderColor: "rgba(255,255,255,0.8)",
 						pointHoverRadius: 5,
 						pointHoverBackgroundColor: "rgba(255, 102, 102,1)",
 						pointHitRadius: 20,
