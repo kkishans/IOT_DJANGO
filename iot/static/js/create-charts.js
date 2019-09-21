@@ -6,27 +6,28 @@
 			Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 			Chart.defaults.global.defaultFontColor = '#292b2c';
 
-			this.createCompletedJobsChart();
+			this.GetDatafromUrl();
 
 		},
 
-		// ajaxGetPostMonthlyData: function () {
-		// 	var urlPath =  'http://' + window.location.hostname + '/get-post-chart-data';
-		// 	var request = $.ajax( {
-		// 		method: 'GET',
-		// 		url: urlPath
-		// } );
+		GetDatafromUrl : function () {
+			var urlPath =  'http://localhost/iot/users';
+			var request = $.ajax( {
+				method: 'GET',
+				url: urlPath
+		} );
 
-		// 	request.done( function ( response ) {
-		// 		console.log( response );
-		// 		charts.createCompletedJobsChart( response );
-		// 	});
-		// },
+			request.done( function ( response ) {
+				console.log("hi  name is kishan")
+				console.log( response );
+				charts.createCompletedJobsChart( response );
+			});
+		},
 
 		/**
 		 * Created the Completed Jobs Chart
 		 */
-		createCompletedJobsChart: function () {
+		createCompletedJobsChart: function (response) {
 
 			var ctx = document.getElementById("mychart");
 			var myLineChart = new Chart(ctx, {

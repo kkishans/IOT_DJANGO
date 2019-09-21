@@ -1,0 +1,53 @@
+{% extends 'app.html' %}
+
+
+{% block body %}
+<div class="col-lg-8">
+  <div class="card">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>
+              ID
+            </th>
+            <th>
+              Room 
+            </th>
+            {% if user.is_authenticated %}
+            <th>
+              Edit
+            </th>
+            <th>
+              Delete
+            </th>
+            {% endif %}
+            </tr>
+          </thead>
+        <tbody>
+          {% for rooms in object_list %}
+          <tr>
+          <td>
+            {{ rooms.id }}
+          </td>
+          <td>
+            {{ rooms.room }}
+          </td>
+            {% if user.is_authenticated %}
+            <td>
+              <a href="{% url "room_update" rooms.id   %}" class="btn btn-primary">Edit</a>
+
+            </td>
+            <td>
+              <a href="{% url "room_delete" rooms.id   %}" class="btn btn-danger">X</a>
+            </td>
+          </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock body %}
+
