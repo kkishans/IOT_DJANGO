@@ -2,8 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from django.template import loader
 from django.contrib.auth.views import LoginView,LogoutView
-from .models import User
-from django.core import serializers
 from django.views.generic import ListView, DetailView 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import User,Room
@@ -30,8 +28,6 @@ def getData(request):
     users = User.objects.all()
     data = serializers.serialize('json', users)
     return HttpResponse(data, content_type='application/json')
-
-
 
 class RoomList(ListView): 
     model = Room

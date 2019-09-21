@@ -14,5 +14,4 @@ urlpatterns = [
     path('add', views.RoomCreate.as_view(model=Room, success_url="/iot/rooms"), name='room_create'),
     path('update/<int:pk>', views.RoomUpdate.as_view(model=Room, success_url="/iot/rooms"), name='room_update'),
     path('delete/<int:pk>', views.RoomDelete.as_view(model=Room, success_url="/iot/rooms"), name='room_delete'),
-
 ]
