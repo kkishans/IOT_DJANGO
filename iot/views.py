@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from django.template import loader
 from django.contrib.auth.views import LoginView,LogoutView
-from .models import User
+from django.views.generic import ListView, DetailView 
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from .models import User,Room
 # Create your views here.
 
 def home(request):
@@ -21,3 +23,24 @@ def index(request):
         return HttpResponseRedirect("dashboard")
     else:
       return HttpResponseRedirect("login")
+
+
+
+class RoomList(ListView): 
+    model = Room
+    fields = '__all__'
+
+
+class RoomCreate(CreateView): 
+    model = Room
+    fields = '__all__'
+    
+
+class RoomUpdate(UpdateView): 
+    model = Room
+    fields = '__all__'
+
+
+class RoomDelete(DeleteView): 
+    model = Room
+    fields = '__all__'
